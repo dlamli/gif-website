@@ -1,0 +1,1 @@
+export const GIF_API_KEY = 'VKrgooXa0VjttTszxAU17FwCCzB1QAXe&q';

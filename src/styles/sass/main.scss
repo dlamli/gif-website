@@ -1,0 +1,84 @@
+@import "./constants/variables";
+@import "./utils/utils";
+
+@import "../vendor/bootstrap/scss/bootstrap.scss";
+
+* {
+  font-family: $primary-font;
+}
+
+.#{$prefix} {
+  &-section {
+    padding-block: 3.5rem;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    margin-inline: 2.5rem 0;
+  }
+
+  &__card {
+    width: 20rem;
+    padding: 2.5rem 2rem;
+    grid-gap: 2rem;
+    gap: 2rem;
+    border-radius: 1rem;
+    box-shadow: .2rem .2rem 2.9rem 1.1rem rgba(100, 100, 111, 0.2);
+    background: linear-gradient(20deg, rgba(19, 123, 234, 0.2), transparent 50%);
+
+    &-title {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    &-wrapper {
+      gap: 1rem;
+      margin-inline: 1rem;
+      margin-block: .8rem 4rem;
+    }
+
+    &-text {
+      font-size: 0.8rem;
+      text-align: left;
+    }
+
+    &--img {
+      width: 254px;
+      height: 254px;
+      object-fit: cover;
+    }
+  }
+
+  &__spinner {
+    --gifspinner-width: 1.2rem;
+    --gifspinner-height: 1.2rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    &__card {
+      flex-basis: 48%;
+      height: 25rem;
+
+      &-wrapper {
+        margin-inline: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    &__card {
+      flex-basis: 32%;
+
+      &--img {
+        width: 100%;
+        height: 50%;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    &__card {
+      flex-basis: 19%;
+    }
+  }
+}
