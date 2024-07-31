@@ -8,6 +8,10 @@
 }
 
 .#{$prefix} {
+  &__category {
+    margin-block: 2rem;
+  }
+
   &-section {
     padding-block: 3.5rem;
   }
