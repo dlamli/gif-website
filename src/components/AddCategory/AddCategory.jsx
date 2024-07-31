@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Form, InputGroup } from "react-bootstrap";
 import { GifGrid } from "../../components";
 
-export const AddCategory = ({ onAddCategory, categories}) => {
+export const AddCategory = ({ onAddCategory, onCleanCategories, categories}) => {
     const [inputValue, setInputValue] = useState("");
     const [categoryFilter, setCategoryFilter] = useState(categories);
 
@@ -18,17 +18,13 @@ export const AddCategory = ({ onAddCategory, categories}) => {
         onAddCategory(trimInput);
     };
 
-    const onCleanCategories = () => {
-        setCategoryFilter([]);
-    };
-
     useEffect(() => {
         setCategoryFilter(categories);
     }, [categories]);
 
     return (
         <>
-        <div className="d-flex align-items-center gap-1">
+        <div className="d-flex flex-column gap-2 flex-md-row align-items-md-center">
             <Form onSubmit={onFormSubmit}>
                 <InputGroup>
                     <Form.Control

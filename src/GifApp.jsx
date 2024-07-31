@@ -10,12 +10,16 @@ export const GifApp = () => {
         setCategories([newCategory, ...categories]);
     };
 
+    const onCleanCategories = () => {
+        setCategories([]);
+    }
+
     return (
         <>
             <section className="gif-section">
                 <Container>
                     <h1 className="title">GifApp</h1>
-                    <AddCategory onAddCategory={onAddCategory} categories={categories}/>
+                    <AddCategory onAddCategory={onAddCategory} onCleanCategories={onCleanCategories} categories={categories}/>
                 </Container>
             </section>
         </>
